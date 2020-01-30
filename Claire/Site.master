@@ -1,0 +1,113 @@
+﻿<%--<%@ Master Language="VB" AutoEventWireup="true" CodeFile="Site.master.vb" Inherits="SiteMaster" %>--%>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title><%: Page.Title %> - T&C Sanctuary</title>
+	<%--	CSS Style References--%>
+	<link href="~/content/bootstrap.css" rel="stylesheet" />
+	<link href="~/content/style.css" rel="stylesheet" />
+	<link href="~/content/mobile.css" rel="stylesheet" />
+	<link href="~/content/slider.css" rel="stylesheet" />
+	<link href="~/content/lightbox.css" rel="stylesheet">
+	<link href="~/content/animate.css" rel="stylesheet">
+	<link href="~/content/bookblock.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- font-icons -->
+	<link href="~/content/font-awesome.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Gidugu" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+	<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<meta name="viewport" content="width=device-width" />
+	<!-- js -->
+	<asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+	<form runat="server">
+		<asp:ScriptManager runat="server">
+			<Scripts>
+				<asp:ScriptReference Name="MsAjaxBundle" />
+				<asp:ScriptReference Name="jquery" />
+				<asp:ScriptReference Name="bootstrap" />
+				<asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+				<asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/+enuStandards.js" />
+				<asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+				<asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+				<asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+				<asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+				<asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+				<asp:ScriptReference Name="WebFormsBundle" />
+				<asp:ScriptReference Path="~/js/move-top.js" />
+				<asp:ScriptReference Path="~/js/easing.js" />
+				<asp:ScriptReference Path="~/js/lightbox.js" />
+				<asp:ScriptReference Path="~/js/slider.js" />
+				<asp:ScriptReference Path="~/js/jquery.cm-overlay.js" />
+				<asp:ScriptReference Path="~/js/jquery.smint.js" />
+				<asp:ScriptReference Path="~/slider/js/jssor.slider.min.js" />
+				<asp:ScriptReference Path="~/js/modernizr.custom.js" />
+				<asp:ScriptReference Path="~/jquerypp.custom.js" />
+				<asp:ScriptReference Path="~/js/jquery.bookblock.js" />
+				<asp:ScriptReference Path="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js" />
+			</Scripts>
+		</asp:ScriptManager>
+		<header>
+			<script type="text/javascript">
+				jQuery(document).ready(function ($) {
+					$(".scroll").click(function (event) {
+						event.preventDefault();
+						$('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+					});
+				});
+				$(document).ready(function () {
+					var defaults = {
+						containerID: 'toTop', // fading element id
+						containerHoverID: 'toTopHover', // fading element hover id
+						scrollSpeed: 1200,
+						easingType: 'linear'
+					};
+					$().UItoTop({ easingType: 'easeOutQuart' });
+				});
+			</script>
+		</header>
+		<div id="body">
+			<asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+			<section class="content-wrapper main-content clear-fix">
+				<asp:ContentPlaceHolder runat="server" ID="MainContent" />
+			</section>
+		</div>
+		<footer>
+			<div class="w3l_footer">
+				<div class="container">
+					<div class="w3ls_footer_grids">
+						<div class="w3ls_footer_grid">
+							<div class="col-md-12">
+								<div class="w3ls_footer_grid_leftr text-center">
+									<h1 style="color: white; font-size: 3em;">A website for her</h1>
+									<br />
+									<a href="#" class="fa fa-facebook img-rounded"></a>
+									<a href="#" class="fa fa-twitter img-rounded"></a>
+									<a href="#" class="fa fa-linkedin img-rounded"></a>
+									<a href="#" class="fa fa-youtube img-rounded"></a>
+									<a href="#" class="fa fa-instagram img-rounded"></a>
+									<%--									<p>tonytopclaire@gmail.com</p>
+									<p>415 Meadow St, Oshawa. Ontario. Canada.</p>
+									<p>+1 (289) 688 - 4608</p>--%>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<div class="w3l_footer_pos">
+					<p>&copy; 2019 Tony Wang & Claire Zhang. All Rights Reserved. Developed by Tony Wang.</p>
+				</div>
+			</div>
+		</footer>
+	</form>
+</body>
+</html>
+
+
+
